@@ -62,7 +62,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //[self.navigationController pushViewController:<#(nonnull UIViewController *)#> animated:YES];
+    [self.navigationController pushViewController:[NSClassFromString(@"CAShapeLayerController") new] animated:YES];
 }
 
 #pragma mark - Getter

@@ -16,6 +16,7 @@
 		BC6104901C44AAF600B632E7 /* ZDCALayerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC61048F1C44AAF600B632E7 /* ZDCALayerDemoTests.m */; };
 		BC61049B1C44AAF600B632E7 /* ZDCALayerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC61049A1C44AAF600B632E7 /* ZDCALayerDemoUITests.m */; };
 		BC6104AA1C44AE4B00B632E7 /* CAShapeLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6104A91C44AE4B00B632E7 /* CAShapeLayerController.m */; };
+		BC77C0431C4650EE00C15349 /* pen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC77C0421C4650EE00C15349 /* pen@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		BC61049C1C44AAF600B632E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC6104A81C44AE4B00B632E7 /* CAShapeLayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAShapeLayerController.h; sourceTree = "<group>"; };
 		BC6104A91C44AE4B00B632E7 /* CAShapeLayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAShapeLayerController.m; sourceTree = "<group>"; };
+		BC77C0421C4650EE00C15349 /* pen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pen@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,16 +106,9 @@
 		BC6104741C44AAF600B632E7 /* ZDCALayerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BC6104781C44AAF600B632E7 /* AppDelegate.h */,
-				BC6104791C44AAF600B632E7 /* AppDelegate.m */,
-				BC61047B1C44AAF600B632E7 /* RootViewController.h */,
-				BC61047C1C44AAF600B632E7 /* RootViewController.m */,
-				BC6104A81C44AE4B00B632E7 /* CAShapeLayerController.h */,
-				BC6104A91C44AE4B00B632E7 /* CAShapeLayerController.m */,
-				BC61047E1C44AAF600B632E7 /* Main.storyboard */,
-				BC6104811C44AAF600B632E7 /* Assets.xcassets */,
-				BC6104831C44AAF600B632E7 /* LaunchScreen.storyboard */,
-				BC6104861C44AAF600B632E7 /* Info.plist */,
+				BC77C0381C461A0100C15349 /* Delegate */,
+				BC77C0391C461A1200C15349 /* Controllers */,
+				BC77C03B1C461A4D00C15349 /* Others */,
 				BC6104751C44AAF600B632E7 /* Supporting Files */,
 			);
 			path = ZDCALayerDemo;
@@ -122,16 +117,21 @@
 		BC6104751C44AAF600B632E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BC6104811C44AAF600B632E7 /* Assets.xcassets */,
+				BC77C0421C4650EE00C15349 /* pen@2x.png */,
+				BC6104861C44AAF600B632E7 /* Info.plist */,
+				BC6104831C44AAF600B632E7 /* LaunchScreen.storyboard */,
+				BC61047E1C44AAF600B632E7 /* Main.storyboard */,
 				BC6104761C44AAF600B632E7 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BC61048E1C44AAF600B632E7 /* ZDCALayerDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				BC61048F1C44AAF600B632E7 /* ZDCALayerDemoTests.m */,
 				BC6104911C44AAF600B632E7 /* Info.plist */,
+				BC61048F1C44AAF600B632E7 /* ZDCALayerDemoTests.m */,
 			);
 			path = ZDCALayerDemoTests;
 			sourceTree = "<group>";
@@ -139,10 +139,53 @@
 		BC6104991C44AAF600B632E7 /* ZDCALayerDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BC61049A1C44AAF600B632E7 /* ZDCALayerDemoUITests.m */,
 				BC61049C1C44AAF600B632E7 /* Info.plist */,
+				BC61049A1C44AAF600B632E7 /* ZDCALayerDemoUITests.m */,
 			);
 			path = ZDCALayerDemoUITests;
+			sourceTree = "<group>";
+		};
+		BC77C0371C4619CE00C15349 /* CAShapeLayer */ = {
+			isa = PBXGroup;
+			children = (
+				BC6104A81C44AE4B00B632E7 /* CAShapeLayerController.h */,
+				BC6104A91C44AE4B00B632E7 /* CAShapeLayerController.m */,
+			);
+			path = CAShapeLayer;
+			sourceTree = "<group>";
+		};
+		BC77C0381C461A0100C15349 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BC6104781C44AAF600B632E7 /* AppDelegate.h */,
+				BC6104791C44AAF600B632E7 /* AppDelegate.m */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		BC77C0391C461A1200C15349 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC77C03A1C461A3200C15349 /* RootController */,
+				BC77C0371C4619CE00C15349 /* CAShapeLayer */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BC77C03A1C461A3200C15349 /* RootController */ = {
+			isa = PBXGroup;
+			children = (
+				BC61047B1C44AAF600B632E7 /* RootViewController.h */,
+				BC61047C1C44AAF600B632E7 /* RootViewController.m */,
+			);
+			path = RootController;
+			sourceTree = "<group>";
+		};
+		BC77C03B1C461A4D00C15349 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC6104851C44AAF600B632E7 /* LaunchScreen.storyboard in Resources */,
+				BC77C0431C4650EE00C15349 /* pen@2x.png in Resources */,
 				BC6104821C44AAF600B632E7 /* Assets.xcassets in Resources */,
 				BC6104801C44AAF600B632E7 /* Main.storyboard in Resources */,
 			);
@@ -320,6 +364,7 @@
 				BC61047F1C44AAF600B632E7 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		BC6104831C44AAF600B632E7 /* LaunchScreen.storyboard */ = {
@@ -328,6 +373,7 @@
 				BC6104841C44AAF600B632E7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -419,7 +465,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ZDCALayerDemo/Info.plist;
+				INFOPLIST_FILE = "ZDCALayerDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Bourne.ZDCALayerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,7 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ZDCALayerDemo/Info.plist;
+				INFOPLIST_FILE = "ZDCALayerDemo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Bourne.ZDCALayerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,6 +550,7 @@
 				BC6104A11C44AAF600B632E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC6104A21C44AAF600B632E7 /* Build configuration list for PBXNativeTarget "ZDCALayerDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +559,7 @@
 				BC6104A41C44AAF600B632E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC6104A51C44AAF600B632E7 /* Build configuration list for PBXNativeTarget "ZDCALayerDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +568,7 @@
 				BC6104A71C44AAF600B632E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
