@@ -12,6 +12,7 @@
 
 @interface CAShapeLayerController ()
 
+@property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (nonatomic, strong) CAShapeLayer *pathLayer;
 @property (nonatomic, strong) CALayer *animationLayer;
 @property (nonatomic, strong) CALayer *penLayer;
@@ -108,6 +109,9 @@
         pathLayer.fillColor = [UIColor clearColor].CGColor;
         pathLayer.lineWidth = 1.0f;
         pathLayer.lineJoin = kCALineJoinBevel;
+        //MARK: 手动控制timeOffset来显示动画
+        pathLayer.speed = 0;
+        pathLayer.timeOffset = 0;
         [self.animationLayer addSublayer:pathLayer];
         pathLayer;
     });
@@ -124,14 +128,14 @@
 
 }
 
-- (void) startAnimation
+- (void)startAnimation
 {
     [self.pathLayer removeAllAnimations];
     [self.penLayer removeAllAnimations];
     
     self.penLayer.hidden = NO;
     
-    CFTimeInterval timeInterval = 5;
+    CFTimeInterval timeInterval = 10;
     
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     pathAnimation.duration = timeInterval;
@@ -156,6 +160,13 @@
         self.pathLayer = nil;
         self.penLayer = nil;
     }
+}
+
+#pragma mark - Private Method
+
+- (IBAction)chageSliderValue:(UISlider *)sender
+{
+    self.pathLayer.timeOffset = sender.value;
 }
 
 #pragma mark - Delegate

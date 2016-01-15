@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BC6104771C44AAF600B632E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6104761C44AAF600B632E7 /* main.m */; };
-		BC61047A1C44AAF600B632E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6104791C44AAF600B632E7 /* AppDelegate.m */; };
 		BC61047D1C44AAF600B632E7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC61047C1C44AAF600B632E7 /* RootViewController.m */; };
 		BC6104801C44AAF600B632E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC61047E1C44AAF600B632E7 /* Main.storyboard */; };
 		BC6104821C44AAF600B632E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC6104811C44AAF600B632E7 /* Assets.xcassets */; };
@@ -17,6 +16,7 @@
 		BC61049B1C44AAF600B632E7 /* ZDCALayerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC61049A1C44AAF600B632E7 /* ZDCALayerDemoUITests.m */; };
 		BC6104AA1C44AE4B00B632E7 /* CAShapeLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6104A91C44AE4B00B632E7 /* CAShapeLayerController.m */; };
 		BC77C0431C4650EE00C15349 /* pen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC77C0421C4650EE00C15349 /* pen@2x.png */; };
+		BCBB0FC71C48981F00DC4CEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBB0FC61C48981F00DC4CEF /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 /* Begin PBXFileReference section */
 		BC6104721C44AAF600B632E7 /* ZDCALayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZDCALayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6104761C44AAF600B632E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BC6104781C44AAF600B632E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BC6104791C44AAF600B632E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BC61047B1C44AAF600B632E7 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BC61047C1C44AAF600B632E7 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		BC61047F1C44AAF600B632E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +54,8 @@
 		BC6104A81C44AE4B00B632E7 /* CAShapeLayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAShapeLayerController.h; sourceTree = "<group>"; };
 		BC6104A91C44AE4B00B632E7 /* CAShapeLayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAShapeLayerController.m; sourceTree = "<group>"; };
 		BC77C0421C4650EE00C15349 /* pen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pen@2x.png"; sourceTree = "<group>"; };
+		BCBB0FC51C48981F00DC4CEF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BCBB0FC61C48981F00DC4CEF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 		BC6104741C44AAF600B632E7 /* ZDCALayerDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BC77C0381C461A0100C15349 /* Delegate */,
+				BCBB0FC41C48981F00DC4CEF /* AppDelegate */,
 				BC77C0391C461A1200C15349 /* Controllers */,
 				BC77C03B1C461A4D00C15349 /* Others */,
 				BC6104751C44AAF600B632E7 /* Supporting Files */,
@@ -154,15 +154,6 @@
 			path = CAShapeLayer;
 			sourceTree = "<group>";
 		};
-		BC77C0381C461A0100C15349 /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				BC6104781C44AAF600B632E7 /* AppDelegate.h */,
-				BC6104791C44AAF600B632E7 /* AppDelegate.m */,
-			);
-			path = Delegate;
-			sourceTree = "<group>";
-		};
 		BC77C0391C461A1200C15349 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +177,15 @@
 			children = (
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		BCBB0FC41C48981F00DC4CEF /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				BCBB0FC51C48981F00DC4CEF /* AppDelegate.h */,
+				BCBB0FC61C48981F00DC4CEF /* AppDelegate.m */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,9 +319,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBB0FC71C48981F00DC4CEF /* AppDelegate.m in Sources */,
 				BC61047D1C44AAF600B632E7 /* RootViewController.m in Sources */,
 				BC6104AA1C44AE4B00B632E7 /* CAShapeLayerController.m in Sources */,
-				BC61047A1C44AAF600B632E7 /* AppDelegate.m in Sources */,
 				BC6104771C44AAF600B632E7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
