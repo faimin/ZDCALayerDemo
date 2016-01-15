@@ -13,6 +13,7 @@
 @interface CAShapeLayerController ()
 
 @property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (nonatomic, strong) CAShapeLayer *pathLayer;
 @property (nonatomic, strong) CALayer *animationLayer;
 @property (nonatomic, strong) CALayer *penLayer;
@@ -53,12 +54,16 @@
 
 - (void)setupTextLayer
 {
+    if (self.timeInterval > 0) {
+        self.slider.maximumValue = self.timeInterval;
+    }
+    
     [self resetLayer];
     
     CGMutablePathRef letters = CGPathCreateMutable();
     CTFontRef font = CTFontCreateWithName(CFSTR("HelveticaNeue-UltraLight"), 64.0f, NULL);
     NSDictionary *fontAttribute = [NSDictionary dictionaryWithObjectsAndKeys:(__bridge id _Nonnull)(font), kCTFontAttributeName, nil];
-    NSAttributedString *attributeString = [[NSAttributedString alloc] initWithString:@"Sephiroth" attributes:fontAttribute];
+    NSAttributedString *attributeString = [[NSAttributedString alloc] initWithString:(self.drawText ? : @"Sephiroth") attributes:fontAttribute];
     
     CTLineRef line = CTLineCreateWithAttributedString((__bridge CFAttributedStringRef)attributeString);
     CFArrayRef runArray = CTLineGetGlyphRuns(line);
@@ -135,7 +140,7 @@
     
     self.penLayer.hidden = NO;
     
-    CFTimeInterval timeInterval = 10;
+    CFTimeInterval timeInterval = (self.timeInterval > 0) ? self.timeInterval : 10;
     
     CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     pathAnimation.duration = timeInterval;
@@ -168,6 +173,10 @@
 {
     self.pathLayer.timeOffset = sender.value;
 }
+- (IBAction)copleteAction:(id)sender
+{
+    self.drawText = self.textField.text;
+}
 
 #pragma mark - Delegate
 
@@ -189,6 +198,16 @@
         });
     }
     return _animationLayer;
+}
+
+- (void)setDrawText:(NSString *)drawText
+{
+    if (_drawText != drawText) {
+        _drawText = nil;
+        _drawText = [drawText copy];
+        
+        [self textPathAction];
+    }
 }
 
 /*
@@ -228,13 +247,13 @@
 //        CAShapeLayer *pathLayer = [CAShapeLayer layer];
 //        pathLayer.frame = self.animationLayer.bounds;
 //        pathLayer.bounds = CGPathGetBoundingBox(path.CGPath);
-//        //TODO: 背景色
+//        //: 背景色
 //        pathLayer.backgroundColor = [UIColor purpleColor].CGColor;
 //        pathLayer.geometryFlipped = YES;
 //        pathLayer.path = path.CGPath;
-//        //TODO: 画线颜色
+//        //: 画线颜色
 //        pathLayer.strokeColor = [UIColor colorWithRed:234.0/255 green:84.0/255 blue:87.0/255 alpha:1].CGColor;
-//        //TODO: 线条填充色
+//        //: 线条填充色
 //        pathLayer.fillColor = nil;
 //        pathLayer.lineWidth = 1.0f;
 //        pathLayer.lineJoin = kCALineJoinBevel;

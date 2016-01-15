@@ -350,15 +350,38 @@
                                     <action selector="chageSliderValue:" destination="Kgj-2M-261" eventType="valueChanged" id="jr2-fB-wGq"/>
                                 </connections>
                             </slider>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nuw-HB-QOd">
+                                <rect key="frame" x="200" y="91" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5IX-Yn-KIh"/>
+                                    <constraint firstAttribute="width" constant="200" id="B47-Jd-J58"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy2-0I-IzI">
+                                <rect key="frame" x="438" y="96" width="30" height="30"/>
+                                <state key="normal" title="确定"/>
+                                <connections>
+                                    <action selector="copleteAction:" destination="Kgj-2M-261" eventType="touchUpInside" id="exi-Ac-wbT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xii-bz-JIX" firstAttribute="top" secondItem="Ota-tz-s1y" secondAttribute="bottom" constant="150" id="3Vq-C7-3eX"/>
+                            <constraint firstItem="Vy2-0I-IzI" firstAttribute="centerY" secondItem="Nuw-HB-QOd" secondAttribute="centerY" id="I44-Mn-9dM"/>
                             <constraint firstItem="Ota-tz-s1y" firstAttribute="centerX" secondItem="t9T-C9-Qhc" secondAttribute="centerX" id="RNB-EJ-UsJ"/>
+                            <constraint firstItem="Nuw-HB-QOd" firstAttribute="centerX" secondItem="t9T-C9-Qhc" secondAttribute="centerX" id="tJZ-uX-d0o"/>
+                            <constraint firstItem="Vy2-0I-IzI" firstAttribute="leading" secondItem="Nuw-HB-QOd" secondAttribute="trailing" constant="38" id="vKe-CT-WWd"/>
+                            <constraint firstItem="Nuw-HB-QOd" firstAttribute="top" secondItem="KjZ-7j-zVW" secondAttribute="bottom" constant="27" id="xhT-7E-wY8"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="slider" destination="Ota-tz-s1y" id="SVw-Be-PeT"/>
+                        <outlet property="textField" destination="Nuw-HB-QOd" id="BTE-Yt-ILL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FR-g9-2Wa" userLabel="First Responder" sceneMemberID="firstResponder"/>
