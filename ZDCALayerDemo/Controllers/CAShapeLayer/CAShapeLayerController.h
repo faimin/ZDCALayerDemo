@@ -10,7 +10,7 @@
 
 @interface CAShapeLayerController : UIViewController
 
-@property (nonatomic, copy  ) NSString *drawText;
-@property (nonatomic, assign) CFTimeInterval timeInterval;
+@property (nonatomic, copy  ) NSString *drawText;           ///< 显示的文字
+@property (nonatomic, assign) CFTimeInterval timeInterval;  ///< 动画持续时间
 
 @end

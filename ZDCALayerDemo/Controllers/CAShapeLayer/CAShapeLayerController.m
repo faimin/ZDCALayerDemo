@@ -23,6 +23,10 @@
 @implementation CAShapeLayerController
 
 #pragma mark - UI LifeCycel
+- (void)dealloc
+{
+    NSLog(@"第%d行执行了%s", __LINE__, __FUNCTION__);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -127,6 +131,7 @@
         penLayer.contents = (id)penImage.CGImage;
         penLayer.anchorPoint = CGPointZero;
         penLayer.frame = CGRectMake(0.0f, 0.0f, penImage.size.width, penImage.size.height);
+//        penLayer.hidden = YES;
         [self.pathLayer addSublayer:penLayer];
         penLayer;
     });
@@ -171,7 +176,14 @@
 
 - (IBAction)chageSliderValue:(UISlider *)sender
 {
-    self.pathLayer.timeOffset = sender.value;
+    CGFloat value = sender.value;
+//    NSLog(@"\nslider value = %f", value);
+//    if (value == 0 || value == sender.maximumValue) {
+//        self.penLayer.hidden = YES;
+//    } else {
+//        self.penLayer.hidden = NO;
+//    }
+    self.pathLayer.timeOffset = value;
 }
 - (IBAction)copleteAction:(id)sender
 {
@@ -184,6 +196,7 @@
 {
     self.penLayer.hidden = YES;
 }
+
 
 #pragma mark - Property
 
