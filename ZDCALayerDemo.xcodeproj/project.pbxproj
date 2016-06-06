@@ -17,6 +17,7 @@
 		BC6104AA1C44AE4B00B632E7 /* CAShapeLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6104A91C44AE4B00B632E7 /* CAShapeLayerController.m */; };
 		BC77C0431C4650EE00C15349 /* pen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC77C0421C4650EE00C15349 /* pen@2x.png */; };
 		BCBB0FC71C48981F00DC4CEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBB0FC61C48981F00DC4CEF /* AppDelegate.m */; };
+		BCF006F81D05435800BCCFF1 /* ZDCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF006F71D05435800BCCFF1 /* ZDCircleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		BC77C0421C4650EE00C15349 /* pen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pen@2x.png"; sourceTree = "<group>"; };
 		BCBB0FC51C48981F00DC4CEF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BCBB0FC61C48981F00DC4CEF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BCF006F61D05435800BCCFF1 /* ZDCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCircleView.h; sourceTree = "<group>"; };
+		BCF006F71D05435800BCCFF1 /* ZDCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCircleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,9 @@
 			children = (
 				BCBB0FC41C48981F00DC4CEF /* AppDelegate */,
 				BC77C0391C461A1200C15349 /* Controllers */,
+				BCF006F51D05435000BCCFF1 /* Views */,
+				BCF006F61D05435800BCCFF1 /* ZDCircleView.h */,
+				BCF006F71D05435800BCCFF1 /* ZDCircleView.m */,
 				BC77C03B1C461A4D00C15349 /* Others */,
 				BC6104751C44AAF600B632E7 /* Supporting Files */,
 			);
@@ -186,6 +192,13 @@
 				BCBB0FC61C48981F00DC4CEF /* AppDelegate.m */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		BCF006F51D05435000BCCFF1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCBB0FC71C48981F00DC4CEF /* AppDelegate.m in Sources */,
+				BCF006F81D05435800BCCFF1 /* ZDCircleView.m in Sources */,
 				BC61047D1C44AAF600B632E7 /* RootViewController.m in Sources */,
 				BC6104AA1C44AE4B00B632E7 /* CAShapeLayerController.m in Sources */,
 				BC6104771C44AAF600B632E7 /* main.m in Sources */,
