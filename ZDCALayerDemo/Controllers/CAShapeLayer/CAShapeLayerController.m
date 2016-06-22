@@ -285,6 +285,19 @@
 //    });
 //}
 
-
+- (void)line {
+    CAShapeLayer *progressLayer = [CAShapeLayer layer];
+    progressLayer.frame = (CGRect){0, 0, 100, 5};
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(0, 0)];
+    [path addLineToPoint:CGPointMake(100, 0)];
+    progressLayer.path = path.CGPath;
+    progressLayer.fillColor = nil;
+    progressLayer.strokeColor = [UIColor redColor].CGColor;
+    progressLayer.lineWidth = 5.0f;
+    progressLayer.lineCap = kCALineCapButt;
+    progressLayer.strokeStart = 0.0f;
+    progressLayer.strokeEnd = 1.0f;
+}
 
 @end
