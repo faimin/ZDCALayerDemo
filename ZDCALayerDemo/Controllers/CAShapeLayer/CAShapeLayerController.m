@@ -5,6 +5,7 @@
 //  Created by 符现超 on 16/1/12.
 //  Copyright © 2016年 Fate.D.Bourne. All rights reserved.
 //  https://github.com/ole/Animated-Paths
+//  https://github.com/leiyanACWorld123/LYLYCoreText && http://www.tuicool.com/articles/n6Bny2A
 
 #import "CAShapeLayerController.h"
 #import <QuartzCore/QuartzCore.h>
@@ -131,7 +132,7 @@
         penLayer.contents = (id)penImage.CGImage;
         penLayer.anchorPoint = CGPointZero;
         penLayer.frame = CGRectMake(0.0f, 0.0f, penImage.size.width, penImage.size.height);
-//        penLayer.hidden = YES;
+        //penLayer.hidden = YES;
         [self.pathLayer addSublayer:penLayer];
         penLayer;
     });
@@ -185,6 +186,7 @@
 //    }
     self.pathLayer.timeOffset = value;
 }
+
 - (IBAction)copleteAction:(id)sender
 {
     self.drawText = self.textField.text;
@@ -197,9 +199,7 @@
     self.penLayer.hidden = YES;
 }
 
-
 #pragma mark - Property
-
 - (CALayer *)animationLayer
 {
     if (!_animationLayer) {
