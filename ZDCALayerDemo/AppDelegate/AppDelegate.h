@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  ZDCALayerDemo
 //
-//  Created by 符现超 on 16/1/12.
-//  Copyright © 2016年 Fate.D.Bourne. All rights reserved.
+//  Created by Zero.D.Saber on 16/1/12.
+//  Copyright © 2016年 Zero.D.Saber. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

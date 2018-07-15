@@ -2,8 +2,8 @@
 //  CAShapeLayerController.m
 //  ZDCALayerDemo
 //
-//  Created by 符现超 on 16/1/12.
-//  Copyright © 2016年 Fate.D.Bourne. All rights reserved.
+//  Created by Zero.D.Saber on 16/1/12.
+//  Copyright © 2016年 Zero.D.Saber. All rights reserved.
 //  https://github.com/ole/Animated-Paths
 //  https://github.com/leiyanACWorld123/LYLYCoreText && http://www.tuicool.com/articles/n6Bny2A
 
@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreText/CoreText.h>
 
-@interface CAShapeLayerController ()
+@interface CAShapeLayerController ()<CAAnimationDelegate>
 
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet UITextField *textField;
