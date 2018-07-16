@@ -5,6 +5,8 @@
 //  Created by Zero.D.Saber on 2018/7/15.
 //  Copyright © 2018年 Zero.D.Saber. All rights reserved.
 //
+//  https://zsisme.gitbooks.io/ios-/content/chapter6/careplicatorLayer.html
+//  https://www.jianshu.com/p/2e6facd8142f
 
 #import "CAReplicatorLayerController.h"
 
