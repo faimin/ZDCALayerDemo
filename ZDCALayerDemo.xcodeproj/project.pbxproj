@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		BCBB0FC71C48981F00DC4CEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBB0FC61C48981F00DC4CEF /* AppDelegate.m */; };
 		BCF006F81D05435800BCCFF1 /* ZDCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF006F71D05435800BCCFF1 /* ZDCircleView.m */; };
 		DAB9E1DF20FB2BC400DF6027 /* CAReplicatorLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB9E1DE20FB2BC400DF6027 /* CAReplicatorLayerController.m */; };
+		FA42B02F21EF0759009C6C34 /* ZDMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA42B02E21EF0759009C6C34 /* ZDMaskViewController.m */; };
+		FA42B03221EF07D5009C6C34 /* ZDImageMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA42B03121EF07D5009C6C34 /* ZDImageMaskView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		BCF006F71D05435800BCCFF1 /* ZDCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCircleView.m; sourceTree = "<group>"; };
 		DAB9E1DD20FB2BC400DF6027 /* CAReplicatorLayerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAReplicatorLayerController.h; sourceTree = "<group>"; };
 		DAB9E1DE20FB2BC400DF6027 /* CAReplicatorLayerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAReplicatorLayerController.m; sourceTree = "<group>"; };
+		FA42B02D21EF0759009C6C34 /* ZDMaskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDMaskViewController.h; sourceTree = "<group>"; };
+		FA42B02E21EF0759009C6C34 /* ZDMaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMaskViewController.m; sourceTree = "<group>"; };
+		FA42B03021EF07D5009C6C34 /* ZDImageMaskView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDImageMaskView.h; sourceTree = "<group>"; };
+		FA42B03121EF07D5009C6C34 /* ZDImageMaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDImageMaskView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,7 @@
 				BC77C03A1C461A3200C15349 /* RootController */,
 				BC77C0371C4619CE00C15349 /* CAShapeLayer */,
 				DAB9E1DC20FB2B9900DF6027 /* CAReplicatorLayer */,
+				FA42B02C21EF04B3009C6C34 /* Mask */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +208,8 @@
 			children = (
 				BCF006F61D05435800BCCFF1 /* ZDCircleView.h */,
 				BCF006F71D05435800BCCFF1 /* ZDCircleView.m */,
+				FA42B03021EF07D5009C6C34 /* ZDImageMaskView.h */,
+				FA42B03121EF07D5009C6C34 /* ZDImageMaskView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +221,15 @@
 				DAB9E1DE20FB2BC400DF6027 /* CAReplicatorLayerController.m */,
 			);
 			path = CAReplicatorLayer;
+			sourceTree = "<group>";
+		};
+		FA42B02C21EF04B3009C6C34 /* Mask */ = {
+			isa = PBXGroup;
+			children = (
+				FA42B02D21EF0759009C6C34 /* ZDMaskViewController.h */,
+				FA42B02E21EF0759009C6C34 /* ZDMaskViewController.m */,
+			);
+			path = Mask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +294,7 @@
 		BC61046A1C44AAF600B632E7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZD;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Zero.D.Saber;
 				TargetAttributes = {
@@ -294,7 +313,7 @@
 				};
 			};
 			buildConfigurationList = BC61046D1C44AAF600B632E7 /* Build configuration list for PBXProject "ZDCALayerDemo" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -350,8 +369,10 @@
 				BCF006F81D05435800BCCFF1 /* ZDCircleView.m in Sources */,
 				DAB9E1DF20FB2BC400DF6027 /* CAReplicatorLayerController.m in Sources */,
 				BC61047D1C44AAF600B632E7 /* RootViewController.m in Sources */,
+				FA42B03221EF07D5009C6C34 /* ZDImageMaskView.m in Sources */,
 				BC6104AA1C44AE4B00B632E7 /* CAShapeLayerController.m in Sources */,
 				BC6104771C44AAF600B632E7 /* main.m in Sources */,
+				FA42B02F21EF0759009C6C34 /* ZDMaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +538,10 @@
 				DEVELOPMENT_TEAM = 9RX2YUH426;
 				INFOPLIST_FILE = "ZDCALayerDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Bourne.ZDCALayerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -530,7 +554,10 @@
 				DEVELOPMENT_TEAM = 9RX2YUH426;
 				INFOPLIST_FILE = "ZDCALayerDemo/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Bourne.ZDCALayerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -541,7 +568,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ZDCALayerDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Bourne.ZDCALayerDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDCALayerDemo.app/ZDCALayerDemo";
@@ -553,7 +584,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ZDCALayerDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Bourne.ZDCALayerDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZDCALayerDemo.app/ZDCALayerDemo";
@@ -564,7 +599,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = ZDCALayerDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Bourne.ZDCALayerDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = ZDCALayerDemo;
@@ -576,7 +615,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = ZDCALayerDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = Bourne.ZDCALayerDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = ZDCALayerDemo;
