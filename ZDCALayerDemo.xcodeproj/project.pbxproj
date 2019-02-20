@@ -21,6 +21,7 @@
 		DAB9E1DF20FB2BC400DF6027 /* CAReplicatorLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB9E1DE20FB2BC400DF6027 /* CAReplicatorLayerController.m */; };
 		FA42B02F21EF0759009C6C34 /* ZDMaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA42B02E21EF0759009C6C34 /* ZDMaskViewController.m */; };
 		FA42B03221EF07D5009C6C34 /* ZDImageMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA42B03121EF07D5009C6C34 /* ZDImageMaskView.m */; };
+		FAE7F4D8221D4A5C004DDF3F /* ZDLyricsView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE7F4D7221D4A5C004DDF3F /* ZDLyricsView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		FA42B02E21EF0759009C6C34 /* ZDMaskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDMaskViewController.m; sourceTree = "<group>"; };
 		FA42B03021EF07D5009C6C34 /* ZDImageMaskView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDImageMaskView.h; sourceTree = "<group>"; };
 		FA42B03121EF07D5009C6C34 /* ZDImageMaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDImageMaskView.m; sourceTree = "<group>"; };
+		FAE7F4D6221D4A5C004DDF3F /* ZDLyricsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDLyricsView.h; sourceTree = "<group>"; };
+		FAE7F4D7221D4A5C004DDF3F /* ZDLyricsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDLyricsView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +213,8 @@
 				BCF006F71D05435800BCCFF1 /* ZDCircleView.m */,
 				FA42B03021EF07D5009C6C34 /* ZDImageMaskView.h */,
 				FA42B03121EF07D5009C6C34 /* ZDImageMaskView.m */,
+				FAE7F4D6221D4A5C004DDF3F /* ZDLyricsView.h */,
+				FAE7F4D7221D4A5C004DDF3F /* ZDLyricsView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				BC61047D1C44AAF600B632E7 /* RootViewController.m in Sources */,
 				FA42B03221EF07D5009C6C34 /* ZDImageMaskView.m in Sources */,
 				BC6104AA1C44AE4B00B632E7 /* CAShapeLayerController.m in Sources */,
+				FAE7F4D8221D4A5C004DDF3F /* ZDLyricsView.m in Sources */,
 				BC6104771C44AAF600B632E7 /* main.m in Sources */,
 				FA42B02F21EF0759009C6C34 /* ZDMaskViewController.m in Sources */,
 			);

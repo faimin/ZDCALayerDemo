@@ -25,6 +25,8 @@
 #pragma mark -
 
 - (void)setupMask {
+    [self addSubview:self.animationView];
+    
     self.animationView.layer.mask = ({
         CALayer *maskLayer = [CALayer layer];
         maskLayer.frame = self.animationView.bounds;
@@ -32,7 +34,6 @@
         maskLayer.contents = (__bridge id)maskImage.CGImage;
         maskLayer;
     });
-    
     [self.animationView.layer addSublayer:self.gradientLayer];
 }
 
@@ -41,7 +42,7 @@
 - (UIView *)animationView {
     if (!_animationView) {
         UIView *view = [[UIView alloc] initWithFrame:(CGRect){8, (self.bounds.size.height-12)/2.0, 14, 12}];
-        view.backgroundColor = UIColor.whiteColor;
+        view.backgroundColor = UIColor.yellowColor;
         _animationView = view;
     }
     return _animationView;
@@ -50,7 +51,7 @@
 - (CAGradientLayer *)gradientLayer {
     if (!_gradientLayer) {
         CAGradientLayer *layer = [CAGradientLayer layer];
-        layer.frame = (CGRect){0, 7, self.animationView.bounds.size.width, self.animationView.bounds.size.height};
+        layer.frame = (CGRect){0, 4, self.animationView.bounds.size.width, self.animationView.bounds.size.height};
         layer.startPoint = (CGPoint){0, 0};
         layer.endPoint = (CGPoint){1, 1};
         layer.colors = @[(__bridge id)[UIColor orangeColor].CGColor, (__bridge id)[UIColor purpleColor].CGColor];

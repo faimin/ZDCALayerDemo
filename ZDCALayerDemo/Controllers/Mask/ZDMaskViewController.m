@@ -8,9 +8,10 @@
 
 #import "ZDMaskViewController.h"
 #import "ZDImageMaskView.h"
+#import "ZDLyricsView.h"
 
 @interface ZDMaskViewController ()
-
+@property (nonatomic, strong) ZDLyricsView *lyricView;
 @end
 
 @implementation ZDMaskViewController
@@ -23,18 +24,26 @@
 }
 
 - (void)setup {
+    [self setupMaskHeart];
+    [self setupMaskLyrics];
+}
+
+- (void)setupMaskHeart {
     ZDImageMaskView *maskView = [[ZDImageMaskView alloc] initWithFrame:(CGRect){20, 100, 50, 50}];
     [self.view addSubview:maskView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setupMaskLyrics {
+    ZDLyricsView *view = [[ZDLyricsView alloc] initWithFrame:(CGRect){10, 150, CGRectGetWidth(self.view.frame) - 10*2, 30}];
+    view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    view.lyricText = @"大家好，我是智能机器人!!!";
+    [self.view addSubview:view];
+    _lyricView = view;
 }
-*/
+
+- (IBAction)updateSliderValue:(UISlider *)sender {
+    CGFloat value = sender.value;
+    self.lyricView.progress = value;
+}
 
 @end
