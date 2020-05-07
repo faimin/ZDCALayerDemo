@@ -35,6 +35,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.navigationItem.title = NSStringFromClass(self.class);
+    
     [self events];
 }
 
