@@ -41,7 +41,7 @@
 }
 
 - (void)setLyricText:(NSString *)lyricText {
-    if (_lyricText == lyricText) return;
+    if ([_lyricText isEqualToString:lyricText]) return;
     _lyricText = lyricText;
     
     self.lyricsLabel.text = lyricText;
