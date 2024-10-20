@@ -124,7 +124,6 @@
 				BCBB0FC41C48981F00DC4CEF /* AppDelegate */,
 				BC77C0391C461A1200C15349 /* Controllers */,
 				DAB9E1DB20FB2AF100DF6027 /* Views */,
-				BC77C03B1C461A4D00C15349 /* Others */,
 				BC6104751C44AAF600B632E7 /* Supporting Files */,
 			);
 			path = ZDCALayerDemo;
@@ -188,13 +187,6 @@
 				BC61047C1C44AAF600B632E7 /* RootViewController.m */,
 			);
 			path = RootController;
-			sourceTree = "<group>";
-		};
-		BC77C03B1C461A4D00C15349 /* Others */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Others;
 			sourceTree = "<group>";
 		};
 		BCBB0FC41C48981F00DC4CEF /* AppDelegate */ = {
@@ -322,6 +314,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -543,7 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9RX2YUH426;
 				INFOPLIST_FILE = "ZDCALayerDemo/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,7 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9RX2YUH426;
 				INFOPLIST_FILE = "ZDCALayerDemo/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
