@@ -29,8 +29,11 @@
 }
 
 - (void)setup {
-    //[self setupUI];
+#if 1
+    [self setupUI];
+#else
     [self setuptailwaveAnimation];
+#endif
 }
 
 // 音乐千千静听效果
@@ -38,12 +41,19 @@
     NSUInteger count = 5;
     CGFloat subLayerWidth = 40.0, transformX = 60.0, totoalWidth = transformX*count-(transformX-subLayerWidth);
     
-    UIView *animationView = [[UIView alloc] initWithFrame:CGRectMake(50, 100, totoalWidth, 500)];
-    animationView.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:animationView];
+    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(50, 100, totoalWidth, 500)];
+    container.backgroundColor = [UIColor yellowColor];
+    [self.view addSubview:container];
+    container.translatesAutoresizingMaskIntoConstraints = NO;
+    [NSLayoutConstraint activateConstraints:@[
+        [container.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20],
+        [container.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-20],
+        [container.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:50],
+        [container.heightAnchor constraintEqualToConstant:500],
+    ]];
     
     CAReplicatorLayer *replacatorLayer = [CAReplicatorLayer layer];
-    replacatorLayer.frame = animationView.bounds;
+    replacatorLayer.frame = container.bounds;
     // 复制层个数
     replacatorLayer.instanceCount = count;
     // 60 = 复制层宽度 + 复制层之间的间隔
@@ -70,7 +80,7 @@
     
     [layer addAnimation:animation forKey:@"CAReplicatorLayer.animation"];
     [replacatorLayer addSublayer:layer];
-    [animationView.layer addSublayer:replacatorLayer];
+    [container.layer addSublayer:replacatorLayer];
 }
 
 // 省略号波浪动画
@@ -80,41 +90,55 @@
     CGFloat width = 10.0;
     CGFloat totoalWidth = width * count;
     
-    UIView *animationView = [[UIView alloc] initWithFrame:CGRectMake(50, 100, totoalWidth, font.lineHeight * 1)];
-    animationView.backgroundColor = [UIColor cyanColor];
-    [self.view addSubview:animationView];
+    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(50, 100, totoalWidth, font.lineHeight)];
+    container.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:container];
+    container.translatesAutoresizingMaskIntoConstraints = NO;
+    [NSLayoutConstraint activateConstraints:@[
+        [container.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor constant:50],
+        [container.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:20],
+        [container.widthAnchor constraintEqualToConstant:totoalWidth],
+        [container.heightAnchor constraintEqualToConstant:font.lineHeight],
+    ]];
     
-    CAReplicatorLayer *replacatorLayer = [CAReplicatorLayer layer];
-    replacatorLayer.frame = animationView.bounds;
-    replacatorLayer.instanceCount = count;
-    // 60 = 复制层宽度 + 复制层之间的间隔
-    replacatorLayer.instanceTransform = CATransform3DMakeTranslation(width, 0, 0);
-    replacatorLayer.instanceDelay = 0.1;
-    //replacatorLayer.instanceColor = UIColor.orangeColor.CGColor;
-    replacatorLayer.instanceBlueOffset = 0.1;
-    
-    // 创建复制层的sublayer
-    CATextLayer *textLayer = ({
-        CATextLayer *layer = [CATextLayer layer];
-        layer.string = @"·";
-        layer.font = (__bridge CFTypeRef)(font);
-        layer.fontSize = font.pointSize;
-        layer.foregroundColor = UIColor.grayColor.CGColor;
-        //layer.anchorPoint = CGPointMake(0.5, 0.5);
-        layer.frame = CGRectMake(0, 0, width, CGRectGetHeight(replacatorLayer.frame)/2);
+    CAReplicatorLayer *replacatorLayer = ({
+        __auto_type layer = [CAReplicatorLayer layer];
+        layer.frame = container.bounds;
+        layer.instanceCount = count;
+        layer.instanceTransform = CATransform3DMakeTranslation(width, 0, 0);
+        layer.instanceDelay = 0.2;
+        //layer.instanceColor = UIColor.orangeColor.CGColor;
+        //layer.instanceBlueOffset = 0.1;
         layer;
     });
     
-    CABasicAnimation *animation = [CABasicAnimation animation];
-    animation.keyPath = @"transform.translation.y";
-    animation.toValue = @(CGRectGetHeight(replacatorLayer.bounds)/2.0);
-    animation.duration = 0.5;
-    animation.autoreverses = YES;
-    animation.repeatCount = MAXFLOAT;
+    // 创建复制层的sublayer
+    CATextLayer *textLayer = ({
+        __auto_type layer = [CATextLayer layer];
+        layer.frame = CGRectMake(0, 0, width, CGRectGetHeight(replacatorLayer.frame));
+        layer.string = @"·";
+        layer.font = (__bridge CFTypeRef)(font);
+        layer.fontSize = font.pointSize;
+        layer.foregroundColor = UIColor.whiteColor.CGColor;
+        layer.anchorPoint = CGPointMake(0.5, 0.5);
+        layer;
+    });
     
-    [textLayer addAnimation:animation forKey:@"CAReplicatorLayer"];
+    CABasicAnimation *waveAnimation = ({
+        __auto_type animation = [CABasicAnimation animation];
+        animation.keyPath = @"transform.translation.y";
+        animation.fromValue = @(-CGRectGetHeight(replacatorLayer.bounds)/4.0);
+        animation.toValue = @(CGRectGetHeight(replacatorLayer.bounds)/4.0);
+        animation.duration = 0.5;
+        animation.autoreverses = YES;
+        animation.repeatCount = MAXFLOAT;
+        animation.fillMode = kCAFillModeBackwards; //开始动画时就在fromValue的位置
+        animation;
+    });
+    
+    [textLayer addAnimation:waveAnimation forKey:@"CAReplicatorLayer_Wave"];
     [replacatorLayer addSublayer:textLayer];
-    [animationView.layer addSublayer:replacatorLayer];
+    [container.layer addSublayer:replacatorLayer];
 }
 
 @end
